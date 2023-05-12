@@ -16,6 +16,7 @@ class Lampa{
 
         this.#divElem.on("click", ()=>{
             this.setAllapot();
+            this.#kattintasTrigger
         })
     }
 
@@ -37,7 +38,8 @@ class Lampa{
     }
 
     #kattintasTrigger(){
-
+        const EV = new CustomEvent("kapcsolas", {detail: this.#id});
+        window.dispatchEvent(EV);
     }
 
 }

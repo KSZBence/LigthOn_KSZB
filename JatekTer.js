@@ -6,13 +6,21 @@ class JatekTer{
     #meret = 3
     #lepes  
     constructor(){
+        this.#db = 0
         this.#setAllapotLista();
-
+        this.#ellenorzes();
+        
         let main = $("main");
         for (let index = 0; index < this.#allapotlista.length; index++) {
             let lampa = new Lampa(index, this.#allapotlista[index], main);
         }
 
+        $(window).on("kapcsolas", (event)=>{
+            this.#szomszedokKeresese(event.detail);
+            
+        })
+        
+        
     }
 
     #setAllapotLista(){
@@ -27,8 +35,8 @@ class JatekTer{
         
     }
 
-    #szomszedokKeresese(){
-
+    #szomszedokKeresese(id){
+        
     }
 
     #init(){
@@ -36,7 +44,11 @@ class JatekTer{
     }
 
     #ellenorzes(){
-        
+        for (let index = 0; index < this.#allapotlista.length; index++) {
+            if (this.#allapotlista[index]===true) {
+                this.#db++
+            }            
+        }
     }
 }
 

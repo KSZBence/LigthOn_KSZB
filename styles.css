@@ -3,7 +3,7 @@ main{
     grid-template-columns: 1fr 1fr 1fr;
     text-align: center;
     margin: auto;
-    width: 80%;
+    width: 60%;
 }
 
 main div {
